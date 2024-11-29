@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="logo"><a href="index.html"><img src="images/logo.jpg" alt=""></a></div>
+        <nav>
+            <ul id="navbar" class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="active"><a href="contact.html">Contact</a></li>
+                <img id="cancel" src="images/cancel-icon.png" alt="">
+            </ul>
+
+        </nav>
+        <div>
+            <a class="cart-btn" href="cart.html"><img src="images/cart.png" alt=""><span id="cart-count">0</span></a>
+        </div>
+        <img id="bar" src="images/menu-icon.png" alt="">
+       
+
+    </header>
+
+    <section class="contact-header anim">
+        <h1>#ContactUs</h1>
+        <p>got questions? we're here to help!.</p>
+    </section>
+
+    <!-- <section id="contact" >
+
+        <div class="container">
+            <form>
+                <h1>user form</h1>
+                <label for="name">name</label>
+                <input type="name" required>
+
+               
+                <label for="email">email</label>
+                <input type="email" required>
+
+                <label for="address">address</label>
+                <input type="name" required>
+
+                <label for="message">message</label>
+                <textarea name="message" id="" cols="30" rows="10"></textarea>
+
+                <input class="btn" type="submit">
+            </form>
+           
+
+
+        </div>
+   
+    </section> -->
+
+    <section class="contact">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="5" placeholder="Your message" required></textarea>
+                </div>
+
+                <button type="submit">Send</button>
+                <p id="responseMessage" class="response"></p>
+            </form>
+        </div>
+
+
+        <div class="info">
+            <h2>info</h2>
+           <div>
+            <p> <img src="images/mail.png" alt=""><a href="mailto:abdulrasheedabdulkadirabdul@gmail.com">info@edrips.com</a></p>
+            <p> <img src="images/tel.png" alt=""><a href="+2349067509594">+234 906 7509 594</a></p>
+            <p> <img src="images/location.png" alt="">Kano, Nigeria</p>
+            <p> <img src="images/clock.png" alt="">09:00 - 18:00</p>
+           </div>
+
+           <div class="icon">
+            <img src="images/icon-facebook.svg" alt="">
+            <img src="images/icon-instagram.svg" alt="">
+            <img src="images/icon-twitter.svg" alt="">
+        </div>
+        </div>
+
+    </section>
+
+    
+    <section class="letter">
+        <div class="left">
+            <h2>sign up for newsletters</h2>
+            <p>Get E-mail updates about our latest shop and <span>special offers</span> </p>
+        </div>
+        <div class="right">
+            <form class="form">
+                <input type="email" name="email" id="email" placeholder="Your Email Address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="flex">
+
+       
+            <div class="col">
+                <img class="logo" src="images/logo.jpg" alt="">
+                <p>Specializes in providing high-quality <br> and stylish products  for your wardrobe.</p>
+
+                <div class="icon">
+                    <img src="images/icon-facebook.svg" alt="">
+                    <img src="images/icon-instagram.svg" alt="">
+                    <img src="images/icon-twitter.svg" alt="">
+                </div>
+            </div>
+
+            <div class="col">
+                <h4>shop</h4>
+                <ul>
+                    <li><a href="#">all collections </a> </li>
+                    <li><a href="#">discount</a></li>
+                    <li><a href="#">winter edition</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>about</h4>
+                <ul>
+                    <li><a href="#">about us</a> </li>
+                    <li><a href="#">Delivery Information</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col">
+            <h4>payment methods</h4>
+
+            <div class="payment-icon">
+                <img src="images/payment/Mastercard.png" alt="">
+                <img src="images/payment/visa.png" alt="">
+                <img src="images/payment/paypal.png" alt="">
+            </div>
+           </div>
+    </div>
+
+       <p class="copy">&copy; 2024. Techwhiz- eDRiPS Fashion Store</p>
+    </footer>
+
+<script>
+    
+document.getElementById('contact-form').addEventListener('submit',  (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    //simulating form submission
+    setTimeout(() => {
+         const responseMessage = document.getElementById('responseMessage');
+         responseMessage.textContent = `Thank you, ${name}. We recieve your message! `;
+         
+            //alert(`thamk you, ${name}. We recieve your message `);
+        document.getElementById('contact-form').reset();
+    }, 500);
+    
+});
+
+</script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cart-page">
+    <header id="header" class="header">
+        <div class="logo"><a href="index.html"><img src="images/logo.jpg" alt=""></a></div>
+        <nav>
+            <ul id="navbar" class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">contact</a></li>
+                <img id="cancel" src="images/cancel-icon.png" alt="">
+            </ul>
+
+        </nav>
+        <div>
+            <a class="cart-btn" href="cart.html"><img src="images/cart.png" alt=""><span id="cart-count">0</span></a>
+        </div>
+       
+
+        <img id="bar" src="images/menu-icon.png" alt="">
+       
+
+    </header>
+     
+    <section class="cart-header anim">
+        <h1>#Cart</h1>
+        <p>add your coupon code and SAVE upto 70%</p>
+    </section>
+
+    <section id="cart">
+         <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+        </table> 
+        <h2 id="total-price">Total: $0</h2>
+        <a href="shop.html" class="continue-shopping">~Continue Shopping~</a>
+
+
+        <div class="payment-sect">
+            <h2>Select Payment Method</h2>
+            <div class="payment-method">
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="credit-card" />
+                    <span>Credit Card</span>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="paypal" />
+                    <span>PayPal</span>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="cash" />
+                    <span>Cash on Delivery</span>
+                </label>
+            </div>
+
+            <div id="payment-details" class="hidden">
+                <h3>Payment Details</h3>
+                <div id="credit-card-form" class="hidden">
+                    <input type="text" placeholder="Card Number">
+                    <input type="text" placeholder="Expiration Date (MM/YY)">
+                    <input type="text" placeholder="CVV">
+                </div>
+
+                <div id="paypal-info" class="hidden">
+                    <p>You will be redirected to PayPal to complete your payment.</p>
+                </div>
+
+            </div>
+            <button class="submit-btn">Proceed</button>
+
+         
+        </div>
+        
+
+    </section>
+
+    <footer>
+        <div class="flex">
+
+       
+            <div class="col">
+                <img class="logo" src="images/logo.jpg" alt="">
+                <p>Specializes in providing high-quality<br>and stylish products for your wardrobe.</p>
+
+                <div class="icon">
+                    <img src="images/icon-facebook.svg" alt="">
+                    <img src="images/icon-instagram.svg" alt="">
+                    <img src="images/icon-twitter.svg" alt="">
+                </div>
+            </div>
+
+            <div class="col">
+                <h4>shop</h4>
+                <ul>
+                    <li><a href="#">all collections </a> </li>
+                    <li><a href="#">discount</a></li>
+                    <li><a href="#">winter edition</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h4>about</h4>
+                <ul>
+                    <li><a href="#">about us</a> </li>
+                    <li><a href="#">Delivery Information</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col">
+            <h4>payment methods</h4>
+
+            <div class="payment-icon">
+                <img src="images/payment/Mastercard.png" alt="">
+                <img src="images/payment/visa.png" alt="">
+                <img src="images/payment/paypal.png" alt="">
+            </div>
+           </div>
+    </div>
+
+       <p class="copy">&copy; 2024. Techwhiz- eDRiPS Fashion Store</p>
+    </footer>
+
+    <script>
+        
+    document.querySelectorAll('input[name="payment"]').forEach((input) => {
+    input.addEventListener('change', (e) => {
+        const paymentDetails = document.getElementById('payment-details');
+        const creditCartForm = document.getElementById('credit-card-form');
+        const paypalInfo = document.getElementById('paypal-info');
+
+        //visibility
+        paymentDetails.classList.add('hidden');
+        creditCartForm.classList.add('hidden');
+        paypalInfo.classList.add('hidden');
+
+        //show
+
+        if (e.target.value === 'credit-card') {
+            paymentDetails.classList.remove('hidden');
+            creditCartForm.classList.remove('hidden');
+
+        } else if (e.target.value === 'paypal') {
+            paymentDetails.classList.remove('hidden');
+            paypalInfo.classList.remove('hidden');
+        }
+    });
+});
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html> 
